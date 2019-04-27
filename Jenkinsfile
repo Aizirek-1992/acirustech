@@ -9,7 +9,7 @@ node('master'){
 
   // build socker image
   stage('Build'){
-    dockerImage = docker.build("acirustech-${GIT_BRANCH}")
+    dockerImage = docker.build("acirustech-${BRANCH_NAME}")
   }
 
   //test
