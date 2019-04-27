@@ -1,3 +1,5 @@
+@Library('CommonLib@master') _
+def common = new com.lib.JenkinsDeployerPipeline()
 node('master') {
 
   def dockerImage
