@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('Build') {
+    stage('Pull SCM') {
       steps {
         sh 'ls /app/app.py'
       }
