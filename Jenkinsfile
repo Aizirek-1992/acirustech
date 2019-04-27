@@ -1,7 +1,7 @@
 node('master'){
 
   def dockerImage
-
+  def branchName = "${scm.branches[0].name}".replaceAll(/^\*\//, '').replace("/", "-").toLowerCase()
   // pull code from github
   stage('Checout SCM'){
     git branch: 'alibek', url: 'https://github.com/fuchicorp/acirustech.git'
@@ -9,7 +9,7 @@ node('master'){
 
   // build socker image
   stage('Build'){
-    dockerImage = docker.build("acirustech-${scm.branches[0].name}".replaceAll(/^\*\//, '').replace("/", "-").toLowerCase())
+    dockerImage = docker.build("acirustech-${branchName}")
     
   }
 
