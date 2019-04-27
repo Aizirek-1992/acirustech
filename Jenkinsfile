@@ -21,7 +21,7 @@ node('master'){
 
   // push the app to private repository
   stage('Push'){
-    docker.withRegistry('htttp://nexus.fuchicorp.com:8086','docker-private-credentials'){
+    docker.withRegistry('http://nexus.fuchicorp.com:8086','docker-private-credentials'){
       dockerImage.push('${BUILD_NUMBER}')
       dockerImage.push('latest')
     }
