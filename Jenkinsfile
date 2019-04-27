@@ -4,8 +4,8 @@ node('master'){
   def dockerImage
   def branchName = "alibek" //"${scm.branches[0].name}".replaceAll(/^\*\//, '').replace("/", "-").toLowerCase()
   // def salckChannel = 'test-message'
-  def slackUrl = 'https://fuchicorp.slack.com/services/hooks/jenkins-ci/'
-  def slackTokenId = 'slack-token'
+  //def slackUrl = 'https://fuchicorp.slack.com/services/hooks/jenkins-ci/'
+  //def slackTokenId = 'slack-token'
   
   
   common.notifyStarted()
