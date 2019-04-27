@@ -9,7 +9,8 @@ node('master'){
 
   // build socker image
   stage('Build'){
-    dockerImage = docker.build("acirustech-${env.GIT_BRANCH}")
+    dockerImage = docker.build("acirustech-${scm.branches[0].name}".replaceAll(/^\*\//, '').replace("/", "-").toLowerCase())
+    
   }
 
   //test
