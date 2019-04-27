@@ -12,5 +12,10 @@ pipeline {
         sh 'ls /app/app.py'
       }
     }
+    stage('Unittest') {
+      steps {
+        sh 'pip'
+      }
+    }
   }
 }
