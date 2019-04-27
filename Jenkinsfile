@@ -1,6 +1,7 @@
 node('master') {
 
   def dockerImage
+  def branchName = "${scm.branches[0].name}".toLowerCase()
 
   // Poll the application to workspace
   stage('Checkout SCM') {
@@ -10,7 +11,7 @@ node('master') {
 
   // Build the docker image
   stage('Build') {
-    dockerImage = docker.build("acirustech-${BRANCH_NAME}")
+    dockerImage = docker.build("acirustech-")
   }
 
 
