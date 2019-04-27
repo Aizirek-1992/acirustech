@@ -1,14 +1,15 @@
 pipeline {
   agent {
     dockerfile {
-      filename 'Dockerfile'
+      filename 'Dokerfile'
     }
 
   }
   stages {
     stage('Build') {
       steps {
-        sh 'ls /app/app.py'
+        sh '''ls /app/app.py
+'''
       }
     }
   }
