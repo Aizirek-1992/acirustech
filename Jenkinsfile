@@ -1,7 +1,7 @@
 node('master') {
 
   def dockerImage
-  def branchName = "${scm.branches[0].name}".toLowerCase()
+  def branchName = "${scm.branches[0].name}".replaceAll(/^\*\//, '').replace("/", "-").toLowerCase()
 
   // Poll the application to workspace
   stage('Checkout SCM') {
