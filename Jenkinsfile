@@ -9,7 +9,7 @@ node('master'){
 
   // build socker image
   stage('Build'){
-    dockerImage = docker.build("acirustech")
+    dockerImage = docker.build("acirustech-alibek")
   }
 
   //test
