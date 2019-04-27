@@ -12,5 +12,11 @@ pipeline {
 '''
       }
     }
+    stage('Unitest') {
+      steps {
+        sh '''pip
+'''
+      }
+    }
   }
 }
