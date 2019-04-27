@@ -9,14 +9,7 @@ node('master'){
   def salckChannel = 'test-message'
   def slackUrl = 'https://fuchicorp.slack.com/services/hooks/jenkins-ci/'
   def slackTokenId = 'slack-token'
-  def common.notifyStarted()
-  
-
-  @Library('CommonLib@master') _
-  def common = new com.lib.JenkinsDeployerPipeline()
-  def salckChannel = 'test-message'
-  slackUrl = 'https://fuchicorp.slack.com/services/hooks/jenkins-ci/'
-  slackTokenId = 'slack-token'
+  common.notifyStarted()
 
 
   // pull code from github
