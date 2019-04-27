@@ -6,7 +6,8 @@ pipeline {
 
   }
   stages {
-    stage('Build') {
+    stage('Docker Build') {
+      agent any
       steps {
         sh 'ls /app/app.py'
       }
