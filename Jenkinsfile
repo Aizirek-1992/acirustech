@@ -1,6 +1,10 @@
-@Library('CommonLib@master') _
-def common = new com.lib.JenkinsDeployerPipeline()
+
 node('master') {
+  @Library('CommonLib@master') _
+  def common = new com.lib.JenkinsDeployerPipeline()
+  def salckChannel = 'test-message'
+  slackUrl = 'https://fuchicorp.slack.com/services/hooks/jenkins-ci/'
+  slackTokenId = 'slack-token'
 
   def dockerImage
   def branchName = "${scm.branches[0].name}".replaceAll(/^\*\//, '').replace("/", "-").toLowerCase()
