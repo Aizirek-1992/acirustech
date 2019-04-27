@@ -1,7 +1,8 @@
 node('master'){
-
+  @Library('CommonLib@master') _
+  def common = new com.lib.JenkinsDeployerPipeline()
   def dockerImage
-  def branchName = "${scm.branches[0].name}".replaceAll(/^\*\//, '').replace("/", "-").toLowerCase()
+  def branchName = "alibek" //"${scm.branches[0].name}".replaceAll(/^\*\//, '').replace("/", "-").toLowerCase()
   // pull code from github
   stage('Checout SCM'){
     git branch: 'alibek', url: 'https://github.com/fuchicorp/acirustech.git'
