@@ -1,5 +1,5 @@
 node('master'){
-  @Library('CommonLib@master')
+  @Library('CommonLib@alibek')
   def common = new com.lib.JenkinsDeployerPipeline()
   def dockerImage
   def branchName = "alibek" //"${scm.branches[0].name}".replaceAll(/^\*\//, '').replace("/", "-").toLowerCase()
